@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #show-image {
+            position: relative;
+        }
+        #show-image canvas{
+            top: 0;
+            left: 0;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <input type="file" id="input-file">
+    <div id="show-image"></div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js" integrity="sha256-XWbslTONf8w2XOFUgbhZm69LbiLJpiS3bUyoIaZpplk=" crossorigin="anonymous"></script>
+<script src="./index.js"></script>
+</html>
