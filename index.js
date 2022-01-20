@@ -3,18 +3,18 @@ const showImage = document.querySelector("#show-image");
 const MODEL_URL = './models'
 let faceMatcher = null;
 async function loadData () {
-    const labels = ["Fukada Eimi", "Rina Ishihara", "Shiraishi Mai", "Takizawa Laura", "Yua Mikami"];
+    const labels = ["Hamabe Minami", "Imada Mio", "Shiraishi Mai", "Clark Kent"];
     const faceDescriptors = [];
     for(const label of labels) {
         const descriptors = [];
         for(let i = 1; i <= 4; i++) {
-            const image = await faceapi.fetchImage(`/data/${label}/${i}.jpeg`);
+            const image = await faceapi.fetchImage(`/data/${label}/${i}.png`);
             const detection = await faceapi.detectSingleFace(image).withFaceLandmarks().withFaceDescriptor();
             descriptors.push(detection.descriptor);
         }
         faceDescriptors.push(new faceapi.LabeledFaceDescriptors(label, descriptors));
-        alert(`Load ${label} done`)
     }
+    alert(`Load data done`);
     return faceDescriptors;
 }
 
